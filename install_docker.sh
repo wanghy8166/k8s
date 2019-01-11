@@ -56,7 +56,14 @@ wget -O 17.03.sh https://raw.githubusercontent.com/wanghy8166/k8s/master/17.03.s
 oldstr="https://download.docker.com"  
 newstr="http://mirrors.aliyun.com/docker-ce"  
 sed -i "s#$oldstr#$newstr#g" 17.03.sh
+oldstr="17.03.2"  
+newstr="17.03.3"  
+sed -i "s#$oldstr#$newstr#g" 17.03.sh
 sh 17.03.sh
+
+#dockerd[3630]: Error starting daemon: error initializing graphdriver: driver not supported
+#处理:rm /var/lib/docker/* -rf
+#cat /etc/docker/key.json |python -mjson.tool
 
 #/usr/lib/systemd/system/docker.service
 sudo systemctl enable docker
