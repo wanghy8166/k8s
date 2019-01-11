@@ -1,7 +1,9 @@
 #!/bin/bash
-# install_docker.sh
-echo node82 >/etc/hostname
-hostname node82
+#install_docker.sh
+hostname=node82
+echo $hostname
+echo $hostname >/etc/hostname
+hostname $hostname
 
 cat >/etc/hosts<<EOF
 127.0.0.1   localhost
