@@ -14,8 +14,7 @@ EOF
 
 systemctl disable firewalld
 systemctl stop firewalld
-echo 'SELINUX=disabled'      >  /etc/selinux/config
-echo 'SELINUXTYPE=targeted'  >> /etc/selinux/config 
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux 
 setenforce 0
 
 virsh net-destroy  default 
@@ -64,6 +63,16 @@ sh 17.03.sh
 #dockerd[3630]: Error starting daemon: error initializing graphdriver: driver not supported
 #处理:rm /var/lib/docker/* -rf
 #cat /etc/docker/key.json |python -mjson.tool
+
+#WARNING: bridge-nf-call-iptables is disabled
+#WARNING: bridge-nf-call-ip6tables is disabled
+#处理:
+#sudo cat >> /etc/sysctl.conf <<EOF
+#net.bridge.bridge-nf-call-ip6tables = 1
+#net.bridge.bridge-nf-call-iptables = 1
+#net.bridge.bridge-nf-call-arptables = 1
+#EOF
+#sysctl -p
 
 #/usr/lib/systemd/system/docker.service
 sudo systemctl enable docker
