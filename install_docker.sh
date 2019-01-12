@@ -1,5 +1,6 @@
 #!/bin/bash
 #install_docker.sh
+#测试环境:CentOS Linux release 7.5.1804 (Core),3.10.0-862.el7.x86_64
 hostname=node82
 echo $hostname
 echo $hostname >/etc/hostname
@@ -62,6 +63,7 @@ sh 17.03.sh
 
 #dockerd[3630]: Error starting daemon: error initializing graphdriver: driver not supported
 #处理:rm /var/lib/docker/* -rf
+#注意:请先备份，否则镜像和容器都没了
 #cat /etc/docker/key.json |python -mjson.tool
 
 #WARNING: bridge-nf-call-iptables is disabled
