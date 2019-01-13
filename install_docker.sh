@@ -74,7 +74,7 @@ oldstr="https://download.docker.com"
 newstr="http://mirrors.aliyun.com/docker-ce"  
 sed -i "s#$oldstr#$newstr#g" 17.03.sh
 oldstr="17.03.2"  
-newstr="17.03.3"  
+newstr="17.03.2"  
 sed -i "s#$oldstr#$newstr#g" 17.03.sh
 sh 17.03.sh
 
