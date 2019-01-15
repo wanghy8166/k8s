@@ -63,9 +63,9 @@ sudo yum install -y yum-utils \
 
 sudo yum-config-manager \
     --add-repo \
-    #https://download.docker.com/linux/centos/docker-ce.repo
     http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-
+    #https://download.docker.com/linux/centos/docker-ce.repo
+    
 yum list docker-ce --showduplicates | sort -r
 
 #https://releases.rancher.com/install-docker/17.03.sh
