@@ -18,6 +18,7 @@ EOF
 systemctl disable firewalld
 systemctl stop firewalld
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux 
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 setenforce 0
 
 cat >> /etc/sysctl.conf <<EOF
