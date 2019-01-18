@@ -104,4 +104,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable docker
 sudo systemctl restart docker
 sudo docker version
+
+/usr/bin/rdate -s time.nist.gov && /sbin/hwclock --systohc 
 date -R
