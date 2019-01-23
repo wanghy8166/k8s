@@ -31,7 +31,7 @@ https://172.17.10.82/hooks?pipelineId=p-8ds5d:p-5ngw7
 所以注定是不能自动触发的
 
 那怎么办？
-自建gitlab啊
+自建gitlab啊(独立一台)
 https://docs.gitlab.com/ee/install/docker.html#install-gitlab-with-docker
 https://docs.gitlab.com/omnibus/docker/README.html
 
